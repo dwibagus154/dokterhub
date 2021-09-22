@@ -33,8 +33,9 @@ const NavBar = (props) => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="/bantuan" style={{ fontWeight: "500" }} >BANTUAN CEPAT</Nav.Link>
-                            <Nav.Link href="/anamnesis" style={{ fontWeight: "500" }} >DETEKSI PENYAKIT</Nav.Link>
+                            <Nav.Link href="/listartikel" style={{ fontWeight: "500" }} >ARTIKEL</Nav.Link>
+                            <Nav.Link href="/bantuan" style={{ fontWeight: "500" }} >BANTUAN COVID-19</Nav.Link>
+                            <Nav.Link href="/anamnesis" style={{ fontWeight: "500" }} >KONSULTASI PENYAKIT</Nav.Link>
                         </Nav>
                         {type !== "auth" ?
                             localStorage.getItem("15emailcek") ?

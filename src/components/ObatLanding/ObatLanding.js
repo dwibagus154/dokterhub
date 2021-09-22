@@ -15,9 +15,10 @@ const useStyles = makeStyles((theme) => ({
             cursor: "pointer"
 
         },
-        color: "#92E3A9",
+        borderColor: "#92E3A9",
+        color: "grey",
         boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 3px 5px 0 rgba(0, 0, 0, 0.10)',
-        height: "19.5rem", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center"
+        height: "16rem", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center"
     }
 
 }));
@@ -32,6 +33,9 @@ const ObatLanding = () => {
     const handleCart = () => {
         window.location.href = "/obat"
     }
+    const typeObat = [
+        "COVID-19", "BATUK", "FLU", "KULIT", "MATA", "LIHAT-SEMUA"
+    ]
     return (
         <div>
             <Container style={{ marginTop: "20px" }}>
@@ -44,7 +48,7 @@ const ObatLanding = () => {
                 <hr />
                 <br />
                 <Row>
-                    {obats.map((obat, index) => {
+                    {/* {obats.map((obat, index) => {
                         if (index < 5) {
                             return (
                                 <Col lg={2} md={3} sm={4} xs={6} >
@@ -52,17 +56,21 @@ const ObatLanding = () => {
                                 </Col>
                             )
                         }
-                    })}
-                    <Col lg={2} md={3} sm={4} xs={6} >
-                        <Card className={classes.cardObat} onClick={handleCart}>
-                            <div>
-                                <Typography style={{ fontSize: "1.5rem" }} >
-                                    Lihat Semua
-                                </Typography>
-                            </div>
+                    })} */}
+                    {typeObat.map(type => {
+                        return (
+                            <Col lg={2} md={3} sm={4} xs={6} >
+                                <Card className={classes.cardObat} onClick={handleCart}>
+                                    <div>
+                                        <Typography style={{ fontSize: "1.2rem" }} >
+                                            {type}
+                                        </Typography>
+                                    </div>
 
-                        </Card>
-                    </Col>
+                                </Card>
+                            </Col>
+                        );
+                    })}
                 </Row>
                 <br />
             </Container>

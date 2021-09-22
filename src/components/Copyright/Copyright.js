@@ -6,7 +6,7 @@ const Copyright = () => {
         <div style={{ height: "50px" }}>
             <div style={{ marginTop: '20px' }}>
                 <Typography variant="body2" color="textSecondary" align="center">
-                    {'Copyright © SKUYDOKTER '}
+                    {'All rights reserved © dokterhub.com '}
                     {new Date().getFullYear()}
                     {'.'}
                 </Typography>

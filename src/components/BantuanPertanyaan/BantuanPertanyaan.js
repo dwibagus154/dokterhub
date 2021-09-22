@@ -2,7 +2,7 @@ import { Typography, TextField, Button } from '@material-ui/core';
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { useLocalContext } from '../../context/context';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Form } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
@@ -89,7 +89,9 @@ const BantuanPertanyaan = () => {
     }
     const handleBack = () => {
         settanya(tanya - 1);
+        // window.location.href = "/";
     }
+
     const handlebacktohome = () => {
         history.push("/")
     }
@@ -98,26 +100,25 @@ const BantuanPertanyaan = () => {
         case 0:
             return (
                 <div>
-                    <Typography variant="h4" display="block" style={{ fontFamily: "roboto" }}>
-                        Anda Terkena Covid ? Butuh Bantuan Apa
+                    <Typography variant="h6" display="block" style={{ fontFamily: "roboto" }}>
+                        Nama Lengkap Anda
                     </Typography>
-                    <br />
-                    <Row style={{ marginTop: "30px", marginRight: "10px" }}>
-                        <Col lg={6} md={6} sm={6} xs={6} >
-                            <Button onClick={handleNext} variant="outline" className={input.bantuan === 'TABUNG OKSIGEN' ? classes.buttonSelected : classes.buttonChoice}>Tabung Oksigen</Button>
-                        </Col>
-                        <Col lg={6} md={6} sm={6} xs={6} >
-                            <Button onClick={handleNext} variant="outline" className={input.bantuan === 'OBAT ATAU VITAMIN' ? classes.buttonSelected : classes.buttonChoice}>Obat atau Vitamin</Button>
-                        </Col>
-                        <Col lg={6} md={6} sm={6} xs={6} >
-                            <Button onClick={handleNext} variant="outline" className={input.bantuan === 'SEMBAKO' ? classes.buttonSelected : classes.buttonChoice}>Sembako</Button>
-                        </Col>
-                        <Col lg={6} md={6} sm={6} xs={6} >
-                            <Button onClick={handleNext} variant="outline" className={input.bantuan === 'AKSES RUMAH SAKIT' ? classes.buttonSelected : classes.buttonChoice}>Akses Rumah Sakit</Button>
-                        </Col>
-                    </Row>
+                    <Form.Control id="outlined" name="nama" value={input.nama} onChange={handleChange} multiline style={{ marginTop: "5px", marginBottom: "15px", width: "70%" }} id="standard-basic1" />
+                    <Typography variant="h6" display="block" style={{ fontFamily: "roboto" }}>
+                        Email Anda
+                    </Typography>
+                    <Form.Control placeholder="contoh@gmail.com" name="email" value={input.email} onChange={handleChange} multiline style={{ marginTop: "5px", marginBottom: "15px", width: "70%" }} id="standard-basic1" />
+                    <Typography variant="h6" display="block" style={{ fontFamily: "roboto" }}>
+                        Nomor Telepon yang Bisa Dihubungi
+                    </Typography>
+                    <Form.Control placeholder="08xxxxxxx" name="nomor" value={input.nomor} onChange={handleChange} multiline style={{ marginTop: "5px", marginBottom: "15px", width: "70%" }} id="standard-basic1" />
+                    <Typography variant="h6" display="block" style={{ fontFamily: "roboto", marginRight: "15px" }}>
+                        Lokasi Anda Sekarang
+                    </Typography>
+                    <Form.Control as="textarea" placeholder="Alamat, Kota, Provinsi, Kode Pos" name="alamat" value={input.alamat} onChange={handleChange} multiline style={{ marginTop: "5px", marginBottom: "15px", width: "70%" }} id="standard-basic1" />
                     <div className={classes.rootButton}>
-                        <Button variant="outline-success" className={classes.button} onClick={handlebacktohome}>Back</Button>
+                        <Button style={{ marginRight: "50px" }} variant="outline-success" className={classes.button} onClick={handlebacktohome}>Back</Button>
+                        <Button disabled={input.nama === "" || input.email === "" || input.nomor === "" || input.alamat === ""} onClick={handleNext} variant="outline" className={classes.button} onClick={handleNext}>Next</Button>
                     </div>
                 </div >
             );
@@ -125,55 +126,68 @@ const BantuanPertanyaan = () => {
             return (
                 <div>
                     <Typography variant="h4" display="block" style={{ fontFamily: "roboto" }}>
-                        Nama Lengkap Anda
+                        Butuh bantuan apa ?
                     </Typography>
-                    <TextField name="nama" value={input.nama} onChange={handleChange} multiline style={{ marginTop: "50px", width: "50%" }} id="standard-basic1" />
+                    <br />
+                    <Row style={{ marginTop: "30px", marginRight: "10px" }}>
+                        <Col lg={6} md={6} sm={6} xs={6} >
+                            <Button onClick={handleNext} variant="outline" className={input.bantuan === 'TABUNG OKSIGEN' ? classes.buttonSelected : classes.buttonChoice}>Tabung Oksigen</Button>
+                        </Col>
+                        <Col lg={6} md={6} sm={6} xs={6} >
+                            <Button onClick={handleNext} variant="outline" className={input.bantuan === 'SEMBAKO' ? classes.buttonSelected : classes.buttonChoice}>Sembako</Button>
+                        </Col>
+                        <Col lg={6} md={6} sm={6} xs={6} >
+                            <Button onClick={handleNext} variant="outline" className={input.bantuan === 'OBAT ATAU VITAMIN' ? classes.buttonSelected : classes.buttonChoice}>Obat atau Vitamin</Button>
+                        </Col>
+                        <Col lg={6} md={6} sm={6} xs={6} >
+                            <Button onClick={handleNext} variant="outline" className={input.bantuan === 'AKSES RUMAH SAKIT' ? classes.buttonSelected : classes.buttonChoice}>Akses Rumah Sakit</Button>
+                        </Col>
+                    </Row>
                     <div className={classes.rootButton}>
-                        <Button style={{ marginRight: "50px" }} variant="outline-success" className={classes.button} onClick={handleBack}>Back</Button>
-                        <Button disabled={input.nama === ""} onClick={handleNext} variant="outline" className={classes.button} onClick={handleNext}>Next</Button>
+                        <Button variant="outline-success" className={classes.button} onClick={handleBack}>Back</Button>
                     </div>
                 </div >
             );
+        // case 2:
+        //     return (
+        //         <div>
+        //             <Typography variant="h4" display="block" style={{ fontFamily: "roboto" }}>
+        //                 Masukkan Email Anda
+        //             </Typography>
+        //             <TextField name="email" value={input.email} onChange={handleChange} multiline style={{ marginTop: "50px", width: "50%" }} id="standard-basic1" />
+        //             <div className={classes.rootButton}>
+        //                 <Button style={{ marginRight: "50px" }} variant="outline-success" className={classes.button} onClick={handleBack}>Back</Button>
+        //                 <Button disabled={input.email === ""} onClick={handleNext} variant="outline-success" className={classes.button} onClick={handleNext}>Next</Button>
+        //             </div>
+        //         </div >
+        //     );
+        // case 3:
+        //     return (
+        //         <div>
+        //             <Typography variant="h4" display="block" style={{ fontFamily: "roboto" }}>
+        //                 Nomor Telepon yang Bisa Dihubungi
+        //             </Typography>
+        //             <TextField name="nomor" value={input.nomor} onChange={handleChange} multiline style={{ marginTop: "50px", width: "50%" }} id="standard-basic1" />
+        //             <div className={classes.rootButton}>
+        //                 <Button style={{ marginRight: "50px" }} variant="outline-success" className={classes.button} onClick={handleBack}>Back</Button>
+        //                 <Button disabled={input.nomor === ""} onClick={handleNext} variant="outline-success" className={classes.button} onClick={handleNext}>Next</Button>
+        //             </div>
+        //         </div >
+        //     );
+        // case 4:
+        //     return (
+        //         <div>
+        //             <Typography variant="h4" display="block" style={{ fontFamily: "roboto", marginRight: "35px" }}>
+        //                 Lokasi Anda Sekarang (Provinsi, Kota, Alamat, Kode Pos)
+        //             </Typography>
+        //             <TextField name="alamat" value={input.alamat} onChange={handleChange} multiline style={{ marginTop: "50px", width: "50%" }} id="standard-basic1" />
+        //             <div className={classes.rootButton}>
+        //                 <Button style={{ marginRight: "50px" }} variant="outline-success" className={classes.button} onClick={handleBack}>Back</Button>
+        //                 <Button disabled={input.alamat === ""} onClick={handleNext} variant="outline-success" className={classes.button} onClick={handleNext}>Next</Button>
+        //             </div>
+        //         </div >
+        //     );
         case 2:
-            return (
-                <div>
-                    <Typography variant="h4" display="block" style={{ fontFamily: "roboto" }}>
-                        Masukkan Email Anda
-                    </Typography>
-                    <TextField name="email" value={input.email} onChange={handleChange} multiline style={{ marginTop: "50px", width: "50%" }} id="standard-basic1" />
-                    <div className={classes.rootButton}>
-                        <Button style={{ marginRight: "50px" }} variant="outline-success" className={classes.button} onClick={handleBack}>Back</Button>
-                        <Button disabled={input.email === ""} onClick={handleNext} variant="outline-success" className={classes.button} onClick={handleNext}>Next</Button>
-                    </div>
-                </div >
-            );
-        case 3:
-            return (
-                <div>
-                    <Typography variant="h4" display="block" style={{ fontFamily: "roboto" }}>
-                        Nomor Telepon yang Bisa Dihubungi
-                    </Typography>
-                    <TextField name="nomor" value={input.nomor} onChange={handleChange} multiline style={{ marginTop: "50px", width: "50%" }} id="standard-basic1" />
-                    <div className={classes.rootButton}>
-                        <Button style={{ marginRight: "50px" }} variant="outline-success" className={classes.button} onClick={handleBack}>Back</Button>
-                        <Button disabled={input.nomor === ""} onClick={handleNext} variant="outline-success" className={classes.button} onClick={handleNext}>Next</Button>
-                    </div>
-                </div >
-            );
-        case 4:
-            return (
-                <div>
-                    <Typography variant="h4" display="block" style={{ fontFamily: "roboto", marginRight: "35px" }}>
-                        Lokasi Anda Sekarang (Provinsi, Kota, Alamat, Kode Pos)
-                    </Typography>
-                    <TextField name="alamat" value={input.alamat} onChange={handleChange} multiline style={{ marginTop: "50px", width: "50%" }} id="standard-basic1" />
-                    <div className={classes.rootButton}>
-                        <Button style={{ marginRight: "50px" }} variant="outline-success" className={classes.button} onClick={handleBack}>Back</Button>
-                        <Button disabled={input.alamat === ""} onClick={handleNext} variant="outline-success" className={classes.button} onClick={handleNext}>Next</Button>
-                    </div>
-                </div >
-            );
-        case 5:
             return (
                 <div style={{ marginRight: "35px" }}>
                     <Typography variant="h4" display="block" style={{ fontFamily: "roboto" }}>

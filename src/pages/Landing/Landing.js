@@ -4,6 +4,8 @@ import Header from '../../components/Header/Header';
 import NavBar from '../../components/NavBar/NavBar';
 import Copyright from '../../components/Copyright/Copyright'
 import ObatLanding from '../../components/ObatLanding/ObatLanding';
+import ListArtikel from '../ListArtikel/ListArtikel'
+import Action from '../../components/Action/Action'
 
 const Landing = () => {
 
@@ -11,8 +13,10 @@ const Landing = () => {
         <div>
             <NavBar />
             <Header />
-            <ObatLanding />
+            {/* <Action /> */}
             <Blog />
+            {/* <ListArtikel /> */}
+            <ObatLanding />
             <Copyright />
         </div>
     );

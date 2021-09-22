@@ -57,7 +57,20 @@ export function ContextProvider({ children }) {
                 paragraf5: "Selain berbagai cara di atas, Bumil juga bisa mencoba relaksasi guna mengurangi stres. Jika banyak beban pikiran, cobalah ceritakan atau curhat dengan pasangan, kerabat, atau keluarga Bumil agar tidak menjadi momok yang membuat Bumil stres."
             },
             image: "/images/blogs/blogs4.jpg",
-        }
+        },
+        {
+            id: 5,
+            title: "Efek Alkohol d,f,f fmfvfv",
+            description: {
+                paragraf1: "Efek alkohol jangka pendek dapat dirasakan sejak tegukan pertama. Efek pertama yang biasanya muncul adalah pusing dan mual. Namun, semakin banyak minuman beralkohol dikonsumsi, semakin banyak pula efek yang dapat dirasakan dan tentunya perlu diwaspadai",
+                paragraf2: "Alkohol merupakan zat kimia yang bila dikonsumsi dapat memengaruhi setiap bagian tubuh, termasuk otak, tulang, dan jantung. Efek yang ditimbulkan dapat bersifat jangka pendek maupun jangka panjang.",
+                paragraf3: "Minuman beralkohol yang dikonsumsi akan masuk ke darah melalui dinding lambung dan usus kecil. Selanjutnya, alkohol menyebar ke seluruh bagian tubuh termasuk otak, lalu memperlambat kerja otak serta memengaruhi cara berpikir dan berperilaku.",
+                paragraf4: "Efek alkohol jangka pendek dapat ditentukan dari satuan unit alkohol yang dikonsumsi. Satu unit alkohol setara dengan 10 mililiter atau 8 gram alkohol murni, yaitu rata-rata alkohol yang dapat diproses dalam tubuh orang dewasa dalam satu jam.",
+                paragraf5: "Cara terbaik untuk mengurangi efek alkohol jangka pendek adalah dengan tidak mengonsumsi minuman beralkohol sama sekali atau minum secukupnya. Batasi asupan minuman beralkohol, yaitu tidak lebih dari 14 unit alkohol per minggu. Jumlah tersebut setara dengan 6 liter bir atau 10 gelas kecil anggur."
+            },
+            image: "/images/blogs/blogs1.jpg",
+        },
+
     ]
 
     const obats = [

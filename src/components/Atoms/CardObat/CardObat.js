@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { Typography } from '@material-ui/core';
+import Rating from '@material-ui/lab/Rating';
 
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -47,20 +48,19 @@ const CardObat = (props) => {
 
     return (
         <div style={{ marginBottom: "20px" }}>
-            <Card className={classes.cardObat} style={{ height: "19.5rem" }}>
-                <Card.Img onClick={() => handleObat(id)} variant="top" style={{ height: "35%" }} className={classes.imgObat} src={image} />
+            <Card className={classes.cardObat} style={{ height: "17.5rem" }}>
+                <Card.Img onClick={() => handleObat(id)} variant="top" style={{ height: "45%" }} className={classes.imgObat} src={image} />
                 <Card.Body>
                     <Card.Title style={{ height: "30%" }}>
                         <Typography style={{ fontSize: '14px', fontWeight: "1005" }}>
                             {title}
                         </Typography>
                     </Card.Title>
-                    <Card.Text style={{ fontSize: "12px", height: "20%", marginTop: "20px" }}>
+
+                    <Rating size="small" name="read-only" value={2} readOnly />
+                    <Card.Text style={{ fontSize: "12px", height: "10%", marginTop: "20px" }}>
                         Rp {ubahHarga(String(price))},00 / {unit}
                     </Card.Text>
-                    <div style={{ justifyContent: "center", textAlign: "center", height: "20%" }}>
-                        <Button onClick={() => handleObat(id)} style={{ border: "2px solid #92E3A9", backgroundColor: "white", color: "black", fontWeight: "500", fontSize: "12px" }}>Lihat Produk</Button>
-                    </div>
                 </Card.Body>
             </Card>
         </div>

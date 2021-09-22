@@ -2,7 +2,7 @@ import { Typography, TextField, Grid } from '@material-ui/core';
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { useLocalContext } from '../../context/context';
-import { Button, Row, Col, Card } from 'react-bootstrap';
+import { Button, Row, Col, Card, Form } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
@@ -293,56 +293,70 @@ const AnamnesisPertanyaan = () => {
         case 7:
             return (
                 <div>
-                    <Typography variant="h4" display="block" style={{ fontFamily: "roboto" }}>
-                        Apa ada gejala penyerta yang lainnya
+                    <Typography variant="h6" display="block" style={{ fontFamily: "roboto", marginTop: "-20px" }}>
+                        Gejala penyerta lainnya
                     </Typography>
-                    <TextField name="penyerta" value={input.penyerta} onChange={handleChange} multiline style={{ marginTop: "50px", width: "50%" }} id="standard-basic1" />
-                    <div className={classes.rootButton}>
-                        <Button style={{ marginRight: "50px" }} variant="outline-success" className={classes.button} onClick={handleBack}>Back</Button>
-                        <Button disabled={input.penyerta === ""} onClick={handleNext1} variant="outline-success" className={classes.button}>Next</Button>
-                    </div>
-                </div >
-            );
-        case 8:
-            return (
-                <div>
-                    <Typography variant="h4" display="block" style={{ fontFamily: "roboto" }}>
+                    <Form.Control as="textarea" name="penyerta" value={input.penyerta} onChange={handleChange} multiline style={{ marginTop: "5px", marginBottom: "15px", width: "70%" }} id="standard-basic1" />
+                    <Typography variant="h6" display="block" style={{ fontFamily: "roboto" }}>
                         Riwayat penyakit terdahulu
                     </Typography>
-                    <TextField name="riwayat" value={input.riwayat} onChange={handleChange} multiline style={{ marginTop: "50px", width: "50%" }} id="standard-basic1" />
-                    <div className={classes.rootButton}>
-                        <Button style={{ marginRight: "50px" }} variant="outline-success" className={classes.button} onClick={handleBack}>Back</Button>
-                        <Button disabled={input.riwayat === ""} onClick={handleNext1} variant="outline-success" className={classes.button} >Next</Button>
-                    </div>
-                </div >
-            );
-        case 9:
-            return (
-                <div>
-                    <Typography variant="h4" display="block" style={{ fontFamily: "roboto" }}>
+                    <Form.Control as="textarea" name="riwayat" value={input.riwayat} onChange={handleChange} multiline style={{ marginTop: "5px", marginBottom: "15px", width: "70%" }} id="standard-basic1" />
+                    <Typography variant="h6" display="block" style={{ fontFamily: "roboto" }}>
                         Riwayat kesehatan keluarga
                     </Typography>
-                    <TextField name="keluarga" value={input.keluarga} onChange={handleChange} multiline style={{ marginTop: "50px", width: "50%" }} id="standard-basic1" />
-                    <div className={classes.rootButton}>
-                        <Button style={{ marginRight: "50px" }} variant="outline-success" className={classes.button} onClick={handleBack}>Back</Button>
-                        <Button disabled={input.keluarga === ""} onClick={handleNext} variant="outline-success" className={classes.button} >Next</Button>
-                    </div>
-                </div >
-            );
-        case 10:
-            return (
-                <div>
-                    <Typography variant="h4" display="block" style={{ fontFamily: "roboto" }}>
+                    <Form.Control as="textarea" name="keluarga" value={input.keluarga} onChange={handleChange} multiline style={{ marginTop: "5px", marginBottom: "15px", width: "70%" }} id="standard-basic1" />
+                    <Typography variant="h6" display="block" style={{ fontFamily: "roboto" }}>
                         Riwayat lingkungan sosial
                     </Typography>
-                    <TextField name="lingkungan" value={input.lingkungan} onChange={handleChange} multiline style={{ marginTop: "50px", width: "50%" }} id="standard-basic2" />
+                    <Form.Control as="textarea" name="lingkungan" value={input.lingkungan} onChange={handleChange} multiline style={{ marginTop: "5px", marginBottom: "15px", width: "70%" }} id="standard-basic2" />
+
                     <div className={classes.rootButton}>
                         <Button style={{ marginRight: "50px" }} variant="outline-success" className={classes.button} onClick={handleBack}>Back</Button>
-                        <Button disabled={input.lingkungan === ""} onClick={handleNext1} variant="outline-success" className={classes.button} >Next</Button>
+                        <Button disabled={input.penyerta === "" || input.riwayat === "" || input.keluarga === "" || input.lingkungan === ""} onClick={handleNext1} variant="outline-success" className={classes.button}>Next</Button>
                     </div>
                 </div >
             );
-        case 11:
+        // case 8:
+        //     return (
+        //         <div>
+        //             <Typography variant="h4" display="block" style={{ fontFamily: "roboto" }}>
+        //                 Riwayat penyakit terdahulu
+        //             </Typography>
+        //             <TextField name="riwayat" value={input.riwayat} onChange={handleChange} multiline style={{ marginTop: "50px", width: "50%" }} id="standard-basic1" />
+
+        //             <div className={classes.rootButton}>
+        //                 <Button style={{ marginRight: "50px" }} variant="outline-success" className={classes.button} onClick={handleBack}>Back</Button>
+        //                 <Button disabled={input.riwayat === ""} onClick={handleNext1} variant="outline-success" className={classes.button} >Next</Button>
+        //             </div>
+        //         </div >
+        //     );
+        // case 9:
+        //     return (
+        //         <div>
+        //             <Typography variant="h4" display="block" style={{ fontFamily: "roboto" }}>
+        //                 Riwayat kesehatan keluarga
+        //             </Typography>
+        //             <TextField name="keluarga" value={input.keluarga} onChange={handleChange} multiline style={{ marginTop: "50px", width: "50%" }} id="standard-basic1" />
+        //             <div className={classes.rootButton}>
+        //                 <Button style={{ marginRight: "50px" }} variant="outline-success" className={classes.button} onClick={handleBack}>Back</Button>
+        //                 <Button disabled={input.keluarga === ""} onClick={handleNext} variant="outline-success" className={classes.button} >Next</Button>
+        //             </div>
+        //         </div >
+        //     );
+        // case 10:
+        //     return (
+        //         <div>
+        //             <Typography variant="h4" display="block" style={{ fontFamily: "roboto" }}>
+        //                 Riwayat lingkungan sosial
+        //             </Typography>
+        //             <TextField name="lingkungan" value={input.lingkungan} onChange={handleChange} multiline style={{ marginTop: "50px", width: "50%" }} id="standard-basic2" />
+        //             <div className={classes.rootButton}>
+        //                 <Button style={{ marginRight: "50px" }} variant="outline-success" className={classes.button} onClick={handleBack}>Back</Button>
+        //                 <Button disabled={input.lingkungan === ""} onClick={handleNext1} variant="outline-success" className={classes.button} >Next</Button>
+        //             </div>
+        //         </div >
+        //     );
+        case 8:
             return (
                 <div>
                     <Typography variant="h4" display="block" style={{ fontFamily: "roboto" }}>
@@ -367,6 +381,17 @@ const AnamnesisPertanyaan = () => {
 
                                 <Card.Body style={{ height: "3rem", marginTop: "-10px" }}>
                                     <Typography style={{ color: "black", fontSize: "10px", fontWeight: "20px" }}>Obat COVID-19</Typography>
+                                </Card.Body>
+                            </Card >
+                        </Col>
+                        <Col lg={2} xs={4} sm={3} md={2}>
+                            <Card className={classes.cardblog} onClick={handleCart}>
+                                <div>
+                                    <img src="./images/artikel.png" style={{ width: "4.5rem", borderRadius: "14rem", marginTop: "5px" }} />
+                                </div>
+
+                                <Card.Body style={{ height: "3rem", marginTop: "-10px" }}>
+                                    <Typography style={{ color: "black", fontSize: "10px", fontWeight: "20px" }}>Artikel COVID-19</Typography>
                                 </Card.Body>
                             </Card >
                         </Col>
