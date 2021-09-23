@@ -149,7 +149,7 @@ const ObatPage = () => {
                 {
                     type === 1 ?
                         <Copyright /> :
-                        <div style={{ marginTop: "10%" }}>
+                        <div style={{ marginTop: "9.5%" }}>
                             <Copyright />
                         </div>
                 }

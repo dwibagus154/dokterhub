@@ -43,8 +43,8 @@ const ListArtikel = () => {
                             <img style={{ marginTop: "20px", marginBottom: "20px" }} src='/images/blogs/blogs1.jpg' alt="blog" width="100%" />
                         </Hidden>
 
-                        <h3>Efek Alkohol Jangka Pendek yang Harus Diwaspadai</h3>
-                        <p>Efek alkohol jangka pendek dapat dirasakan sejak tegukan pertama. Efek pertama yang biasanya muncul adalah pusing dan mual. Namun, semakin banyak minuman beralkohol dikonsumsi, semakin banyak pula efek yang dapat dirasakan dan tentunya perlu diwaspadai ...</p>
+                        <h3>Benarkah Infeksi Saluran Kemih Harus Selalu Diatasi dengan Antibiotik?</h3>
+                        <p>Infeksi saluran kemih adalah penyakit yang terjadi karena ada infeksi bakteri pada saluran kemih. Kondisi ini biasanya akan sembuh sendiri setelah beberapa hari. Namun, ISK yang parah mungkin harus ditangani dengan konsumsi obat antibiotik atau jenis obat lain....</p>
                         <a href={"/artikel/1"} style={{ textDecoration: "none" }}>Baca selengkapnya</a>
                         <Hidden smDown>
                             <div style={{ marginTop: "30px" }}>

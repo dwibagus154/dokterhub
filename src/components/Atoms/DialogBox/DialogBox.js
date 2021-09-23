@@ -115,7 +115,7 @@ export default function Dialogbox(props) {
                                 No rekening : 635467283636 (BCA)
                             </Typography>
                             <Typography variant="body2" gutterBottom >
-                                Atas nama : Farming
+                                Atas nama : dokterhub
                             </Typography>
                             <Typography variant="body2" gutterBottom align="leftr">
                                 2. Tunggu hingga status pembayaran berubah
@@ -139,7 +139,7 @@ export default function Dialogbox(props) {
                                 <Typography variant="body2" gutterBottom >
                                     email : dwi@gmail.com, password: 123
                                 </Typography>
-                               
+
                             </Grid>
                             : <></>}
                     <Grid
