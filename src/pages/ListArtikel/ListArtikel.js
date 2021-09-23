@@ -6,6 +6,21 @@ import Copyright from '../../components/Copyright/Copyright';
 import NavBar from '../../components/NavBar/NavBar';
 import { useLocalContext } from '../../context/context';
 
+const ubahDescription = (deskripsi, count) => {
+    let des = deskripsi.split(" ");
+    let output = "";
+    if (des.length >= count) {
+        for (let i = 0; i < count; i++) {
+            output += des[i] + " ";
+        }
+        output += "...";
+        return output;
+    } else {
+        return deskripsi;
+    }
+}
+
+
 const ListArtikel = () => {
     const [keyword, setkeyword] = useState("");
     const { blogs } = useLocalContext();
@@ -45,29 +60,31 @@ const ListArtikel = () => {
                     </Grid>
                     <Grid item md={4} sm={4} xs={12}>
                         <h6 style={{ marginTop: "10px" }}>Artikel Populer Lainnya</h6>
-                        <ListGroup variant="flush">
-                            {blogs.map((blog, index) => {
-                                if (index > 0) {
-                                    return (
-                                        <ListGroup.Item style={{ marginTop: "15px" }}>
-                                            <Link to={"/artikel/" + blog.id} style={{ textDecoration: "none", color: "black" }}>
-                                                <Grid style={{ justifyContent: "center" }} container spacing={1}>
-                                                    <Grid item lg={4} sm={6} xs={4}>
-                                                        <img src={blog.image} alt="blog" width="100%" />
+                        <div style={{ height: "400px", display: "block", overflow: "auto" }}>
+                            <ListGroup variant="flush">
+                                {blogs.map((blog, index) => {
+                                    if (index > 0) {
+                                        return (
+                                            <ListGroup.Item style={{ marginTop: "5px", display: "block", height: "100px" }}>
+                                                <Link to={"/artikel/" + blog.id} style={{ textDecoration: "none", color: "black" }}>
+                                                    <Grid style={{ justifyContent: "center" }} container spacing={1}>
+                                                        <Grid item lg={4} sm={6} xs={4}>
+                                                            <img src={blog.image} alt="blog" width="100%" />
+                                                        </Grid>
+                                                        <Grid item sm={8} sm={6} xs={8}>
+                                                            <Typography>
+                                                                {blog.title.length > 30 ? blog.title.substring(0, 30) + "..." : blog.title}
+                                                            </Typography>
+                                                        </Grid>
                                                     </Grid>
-                                                    <Grid item sm={8} sm={6} xs={8}>
-                                                        <Typography>
-                                                            {blog.title.length > 30 ? blog.title.substring(0, 30) + "..." : blog.title}
-                                                        </Typography>
-                                                    </Grid>
-                                                </Grid>
-                                            </Link>
-                                        </ListGroup.Item>
-                                    );
-                                }
-                            })}
-                        </ListGroup>
+                                                </Link>
+                                            </ListGroup.Item>
 
+                                        );
+                                    }
+                                })}
+                            </ListGroup>
+                        </div>
                     </Grid>
                 </Grid>
                 <Hidden xsDown>
@@ -84,8 +101,8 @@ const ListArtikel = () => {
                                                     </Link>
                                                 </Grid>
                                                 <Grid item sm={6} md={8}>
-                                                    <strong>{blog.title}</strong>
-                                                    <p>{blog.description.paragraf1}</p>
+                                                    <strong>{ubahDescription(blog.title, 6)}</strong>
+                                                    <p>{ubahDescription(blog.description.paragraf1, 30)}</p>
                                                     <a href={"/artikel/" + blog.id} style={{ textDecoration: "none" }}>Baca selengkapnya</a>
                                                 </Grid>
                                             </Grid>

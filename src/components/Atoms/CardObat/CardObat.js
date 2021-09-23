@@ -43,7 +43,7 @@ const handleObat = (id) => {
 }
 
 const CardObat = (props) => {
-    const { id, image, title, description, price, unit } = props;
+    const { id, image, title, description, rating, price, unit } = props;
     const classes = useStyles();
 
     return (
@@ -51,13 +51,13 @@ const CardObat = (props) => {
             <Card className={classes.cardObat} style={{ height: "17.5rem" }}>
                 <Card.Img onClick={() => handleObat(id)} variant="top" style={{ height: "45%" }} className={classes.imgObat} src={image} />
                 <Card.Body>
-                    <Card.Title style={{ height: "30%" }}>
-                        <Typography style={{ fontSize: '14px', fontWeight: "1005" }}>
+                    <Card.Title style={{ height: "40%" }}>
+                        <a href={"/detail/" + id} style={{ textDecoration: "none", color: "black", fontSize: '14px', fontWeight: "1005" }}>
                             {title}
-                        </Typography>
+                        </a>
                     </Card.Title>
 
-                    <Rating size="small" name="read-only" value={2} readOnly />
+                    <Rating size="small" name="read-only" value={rating} readOnly />
                     <Card.Text style={{ fontSize: "12px", height: "10%", marginTop: "20px" }}>
                         Rp {ubahHarga(String(price))},00 / {unit}
                     </Card.Text>

@@ -9,6 +9,7 @@ import { useLocalContext } from '../../context/context';
 import Obat from '../../components/Obat/Obat';
 import { makeStyles } from "@material-ui/core/styles";
 import Copyright from "../../components/Copyright/Copyright";
+import { Rating } from '@material-ui/lab';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -111,12 +112,11 @@ const DetailObat = (props) => {
                                 <Typography component="h5" variant="h5">
                                     {newobat.title}
                                 </Typography>
+                                <Rating size="medium" name="read-only" value={newobat.rating} readOnly />
                                 <Typography component="h6" variant="h6" style={{ marginTop: "15px", color: "#92E3A9" }}>
                                     {newobat.type}
                                 </Typography>
-                                <Typography variant="subtitle1" color="textSecondary" style={{ marginTop: "15px" }}>
-                                    {newobat.description}
-                                </Typography>
+
                                 <div style={{ backgroundColor: "#f7f7f7" }}>
                                     <Typography variant="h3" style={{ marginTop: "35px", color: "#92E3A9" }}>
                                         Rp {ubahHarga(String(newobat.price))},00 / {newobat.unit}
@@ -141,6 +141,29 @@ const DetailObat = (props) => {
                                 <Button disabled={kuantitas === 0} onClick={handleKeranjang} style={{ backgroundColor: "#f7f7f7", color: "black" }} >Masukkan Keranjang</Button>
                                 <Button disabled={kuantitas === 0} onClick={handleBeli} style={{ backgroundColor: "#92E3A9", color: "white", marginLeft: "5px", width: "80px" }}>Beli</Button>
                             </div>
+                        </Col>
+                        <Col xs={12} lg={12}>
+                            <Typography style={{ backgroundColor: "#f7f7f7", fontSize: "20px", marginTop: "5%" }}>
+                                Deskripsi
+                            </Typography>
+                            <Typography variant="subtitle1" color="textSecondary" style={{ marginTop: "15px" }}>
+                                {newobat.description}
+                            </Typography>
+                            <br />
+                            <Typography style={{ backgroundColor: "#f7f7f7", fontSize: "20px" }}>
+                                Aturan Pakai
+                            </Typography>
+                            <Typography variant="subtitle1" color="textSecondary" style={{ marginTop: "15px" }}>
+                                {newobat.ruleUse}
+                            </Typography>
+                            <br />
+                            <Typography style={{ backgroundColor: "#f7f7f7", fontSize: "20px" }}>
+                                Dosis Pakai
+                            </Typography>
+                            <Typography variant="subtitle1" color="textSecondary" style={{ marginTop: "15px" }}>
+                                {newobat.dosis}
+                            </Typography>
+                            <hr />
                         </Col>
                     </Row>
                     <h2>Obat dan Vitamin Lain</h2>

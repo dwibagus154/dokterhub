@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
         borderColor: "#92E3A9",
         color: "grey",
         boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 3px 5px 0 rgba(0, 0, 0, 0.10)',
-        height: "23.5rem", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center"
+        height: "25.8rem", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center"
     }
 
 

@@ -43,7 +43,7 @@ const CardBlog = (props) => {
         <Card className={classes.cardblog}>
             <Card.Img onClick={() => handleBlog(id)} className={classes.imgBlog} variant="top" src={image} />
             <Card.Body>
-                <Card.Title style={{ height: "3rem" }}>{title}</Card.Title>
+                <Card.Title style={{ height: "3rem" }}>{ubahDescription(title)}</Card.Title>
                 <Card.Text>
                     {/* {description.paragraf1.length > 50 ? description.paragraf1.substring(0, 50) + " ..." : description.paragraf1} */}
                     {ubahDescription(description.paragraf1)}

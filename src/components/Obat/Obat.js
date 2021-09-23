@@ -25,6 +25,7 @@ const Obat = (props) => {
                                         image={obat.image}
                                         title={obat.title}
                                         type={obat.type}
+                                        rating={obat.rating}
                                         description={obat.description}
                                         price={obat.price}
                                         unit={obat.unit}
@@ -44,6 +45,7 @@ const Obat = (props) => {
                                                 image={obat.image}
                                                 title={obat.title}
                                                 type={obat.type}
+                                                rating={obat.rating}
                                                 description={obat.description}
                                                 price={obat.price}
                                                 unit={obat.unit}
@@ -65,6 +67,7 @@ const Obat = (props) => {
                                                 image={obat.image}
                                                 title={obat.title}
                                                 type={obat.type}
+                                                rating={obat.rating}
                                                 description={obat.description}
                                                 price={obat.price}
                                                 unit={obat.unit}
@@ -86,6 +89,7 @@ const Obat = (props) => {
                                                 image={obat.image}
                                                 title={obat.title}
                                                 type={obat.type}
+                                                rating={obat.rating}
                                                 description={obat.description}
                                                 price={obat.price}
                                                 unit={obat.unit}
@@ -108,6 +112,7 @@ const Obat = (props) => {
                                                 image={obat.image}
                                                 title={obat.title}
                                                 type={obat.type}
+                                                rating={obat.rating}
                                                 description={obat.description}
                                                 price={obat.price}
                                                 unit={obat.unit}

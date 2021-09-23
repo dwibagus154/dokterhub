@@ -70,7 +70,7 @@ const Artikel = (props) => {
                         </div>
                     </Grid>
                     <Grid item md={4} sm={4} xs={12}>
-                        <h6>Artikel lainnya</h6>
+                        <h6>Artikel Terkait</h6>
                         <ListGroup variant="flush">
                             {blogs.map(blog => {
                                 if (String(blog.id) !== props.match.params.id) {

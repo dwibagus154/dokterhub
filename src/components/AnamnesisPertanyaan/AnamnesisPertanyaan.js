@@ -124,7 +124,10 @@ const AnamnesisPertanyaan = () => {
         window.location.href = "/";
     }
     const handleCart = () => {
-        window.location.href = "../obat"
+        window.location.href = "/obat"
+    }
+    const handleBlog = () => {
+        window.location.href = "/listartikel"
     }
     // console.log(input);
     switch (tanya) {
@@ -385,7 +388,7 @@ const AnamnesisPertanyaan = () => {
                             </Card >
                         </Col>
                         <Col lg={2} xs={4} sm={3} md={2}>
-                            <Card className={classes.cardblog} onClick={handleCart}>
+                            <Card className={classes.cardblog} onClick={handleBlog}>
                                 <div>
                                     <img src="./images/artikel.png" style={{ width: "4.5rem", borderRadius: "14rem", marginTop: "5px" }} />
                                 </div>

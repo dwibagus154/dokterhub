@@ -20,12 +20,9 @@ const useStyles = makeStyles((theme) => ({
         marginTop: theme.spacing(8),
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center',
+        alignItems: 'center'
     },
-    avatar: {
-        margin: theme.spacing(1),
-        backgroundColor: theme.palette.secondary.main,
-    },
+
     form: {
         width: '100%', // Fix IE 11 issue.
         marginTop: theme.spacing(1),
@@ -49,7 +46,7 @@ const Login = () => {
         // console.log(input);
         if (input.email === 'dwi@gmail.com' && input.password === '123') {
             localStorage.setItem("15emailcek", input.email)
-            fromKeranjang === null ? history.push('/') : history.push("/detail/" + fromKeranjang)
+            fromKeranjang === null ? history.push('/') : window.location.href = "/detail/" + fromKeranjang;
         } else {
             setauthlogin(true);
         }
@@ -83,7 +80,7 @@ const Login = () => {
                 role="authlogin"
             />
             <NavBar type="auth" />
-            <Container component="main" maxWidth="xs">
+            <Container component="main" maxWidth="xs" >
                 <CssBaseline />
                 <div className={classes.paper}>
                     <Typography component="h1" variant="h5">

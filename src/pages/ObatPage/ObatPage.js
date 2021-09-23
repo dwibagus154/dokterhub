@@ -40,7 +40,8 @@ const ObatPage = () => {
         setkeyword(e.target.value);
     }
     const handleType = (integerr) => {
-        settype(integerr)
+        settype(integerr);
+        setAnchorEl(null);
     }
     const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -52,9 +53,9 @@ const ObatPage = () => {
         setAnchorEl(null);
     };
     return (
-        <div>
+        <div >
             <NavBar />
-            <Container>
+            <Container style={{ height: "80vh" }} >
                 <div>
                     {
                         type === 2 ? <h2 >COVID-19</h2>
@@ -145,9 +146,17 @@ const ObatPage = () => {
                     }
                 </Row> */}
                 <Obat keyword={keyword.length} type={type} />
+                {
+                    type === 1 ?
+                        <Copyright /> :
+                        <div style={{ marginTop: "10%" }}>
+                            <Copyright />
+                        </div>
+                }
+
+
             </Container>
-            <Copyright />
-        </div>
+        </div >
     );
 };
 
