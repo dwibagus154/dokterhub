@@ -34,6 +34,23 @@ const Obat = (props) => {
                             );
                         }
                     })}
+                    {obats.map((obat, index) => {
+                        return (
+                            <Col lg={2} md={3} sm={4} xs={6}>
+                                <CardObat
+                                    id={obat.id}
+                                    image={obat.image}
+                                    title={obat.title}
+                                    type={obat.type}
+                                    rating={obat.rating}
+                                    description={obat.description}
+                                    price={obat.price}
+                                    unit={obat.unit}
+                                />
+                            </Col>
+                        );
+
+                    })}
                     {
                         selanjutnya > 1 ?
                             obats.map((obat, index) => {

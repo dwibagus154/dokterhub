@@ -9,9 +9,7 @@ const Ananmnesis = () => {
 
     return (
         <div>
-
             <NavBar />
-
             <div style={{ height: "500px" }}>
                 <Hidden smDown>
                     <Grid container spacing={3}>

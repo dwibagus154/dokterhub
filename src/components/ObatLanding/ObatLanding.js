@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
         borderColor: "#92E3A9",
         color: "grey",
         boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 3px 5px 0 rgba(0, 0, 0, 0.10)',
-        height: "16rem", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center"
+        height: "18rem", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center"
     }
 
 }));
@@ -48,29 +48,29 @@ const ObatLanding = () => {
                 <hr />
                 <br />
                 <Row>
-                    {/* {obats.map((obat, index) => {
+                    {obats.map((obat, index) => {
                         if (index < 5) {
                             return (
                                 <Col lg={2} md={3} sm={4} xs={6} >
-                                    <CardObat id={obat.id} image={obat.image} title={obat.title} description={obat.description} price={obat.price} unit={obat.unit} />
+                                    <CardObat id={obat.id} image={obat.image} title={obat.title} rating={obat.rating} description={obat.description} price={obat.price} unit={obat.unit} />
                                 </Col>
                             )
                         }
-                    })} */}
-                    {typeObat.map(type => {
-                        return (
-                            <Col lg={2} md={3} sm={4} xs={6} >
-                                <Card className={classes.cardObat} onClick={handleCart}>
-                                    <div>
-                                        <Typography style={{ fontSize: "1.2rem" }} >
-                                            {type}
-                                        </Typography>
-                                    </div>
-
-                                </Card>
-                            </Col>
-                        );
                     })}
+                    {/* {typeObat.map(type => {
+                        return ( */}
+                    <Col lg={2} md={3} sm={4} xs={6} >
+                        <Card className={classes.cardObat} onClick={handleCart}>
+                            <div>
+                                <Typography style={{ fontSize: "1.2rem" }} >
+                                    Lihat Semua
+                                </Typography>
+                            </div>
+
+                        </Card>
+                    </Col>
+                    {/* );
+                    })} */}
                 </Row>
                 <br />
             </Container>

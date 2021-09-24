@@ -79,7 +79,7 @@ const Register = () => {
         window.location.reload();
     }
     return (
-        <>
+        <div style={{ backgroundColor: "white", height: "100vh" }}>
             <Dialogbox
                 openStateDialog={authregister}
                 handleYesDialogBox={handleClose}
@@ -134,7 +134,7 @@ const Register = () => {
                 </div>
 
             </Container>
-        </>
+        </div>
     );
 };
 

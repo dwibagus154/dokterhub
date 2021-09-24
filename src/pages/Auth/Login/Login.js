@@ -72,7 +72,7 @@ const Login = () => {
         window.location.reload();
     }
     return (
-        <>
+        <div style={{ backgroundColor: "white", height: "100vh" }}>
             <Dialogbox
                 openStateDialog={authlogin}
                 handleYesDialogBox={handleClose}
@@ -126,7 +126,7 @@ const Login = () => {
                     </Form>
                 </div>
             </Container >
-        </>
+        </div>
     );
 };
 

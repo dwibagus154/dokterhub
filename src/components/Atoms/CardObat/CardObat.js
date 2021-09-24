@@ -48,7 +48,7 @@ const CardObat = (props) => {
 
     return (
         <div style={{ marginBottom: "20px" }}>
-            <Card className={classes.cardObat} style={{ height: "17.5rem" }}>
+            <Card className={classes.cardObat} style={{ height: "18rem" }}>
                 <Card.Img onClick={() => handleObat(id)} variant="top" style={{ height: "45%" }} className={classes.imgObat} src={image} />
                 <Card.Body>
                     <Card.Title style={{ height: "40%" }}>

@@ -55,7 +55,7 @@ const ObatPage = () => {
     return (
         <div >
             <NavBar />
-            <Container style={{ height: "80vh" }} >
+            <Container style={{ height: "100vh" }} >
                 <div>
                     {
                         type === 2 ? <h2 >COVID-19</h2>
@@ -98,63 +98,8 @@ const ObatPage = () => {
                         </Col>
                     </Row>
                 </div>
-                {/* <Row style={{ marginTop: "30px" }}>
-                    {type == 1 ? <></>
-                        : <Col lg={3} md={4} sm={6} xs={6}>
-                            <Button onClick={() => handleType(1)} className={classes.buttonall} variant="outline">SEMUA JENIS</Button>
-                        </Col>
-                    }
-                    {type == 2 ? <></>
-                        : <Col lg={3} md={4} sm={6} xs={6}>
-                            <Button onClick={() => handleType(2)} className={classes.button} variant="outline-secondary">COVID-19</Button>
-                        </Col>
-                    }
-                    {type == 3 ? <></>
-                        : <Col lg={3} md={4} sm={6} xs={6}>
-                            <Button onClick={() => handleType(3)} className={classes.button} variant="outline-secondary">BATUK</Button>
-                        </Col>
-                    }
-                    {type == 4 ? <></>
-                        : <Col lg={3} md={4} sm={6} xs={6}>
-                            <Button onClick={() => handleType(4)} className={classes.button} variant="outline-secondary">FLU</Button>
-                        </Col>
-                    }
-                    {type == 5 ? <></>
-                        : <Col lg={3} md={4} sm={6} xs={6}>
-                            <Button onClick={() => handleType(5)} className={classes.button} variant="outline-secondary">VITAMIN</Button>
-                        </Col>
-                    }
-                    {type == 6 ? <></>
-                        : <Col lg={3} md={4} sm={6} xs={6}>
-                            <Button onClick={() => handleType(6)} className={classes.button} variant="outline-secondary">ALERGI</Button>
-                        </Col>
-                    }
-                    {type == 7 ? <></>
-                        : <Col lg={3} md={4} sm={6} xs={6}>
-                            <Button onClick={() => handleType(7)} className={classes.button} variant="outline-secondary">KULIT</Button>
-                        </Col>
-                    }
-                    {type == 8 ? <></>
-                        : <Col lg={3} md={4} sm={6} xs={6}>
-                            <Button onClick={() => handleType(8)} className={classes.button} variant="outline-secondary">MATA</Button>
-                        </Col>
-                    }
-                    {type == 9 ? <></>
-                        : <Col lg={3} md={4} sm={6} xs={6}>
-                            <Button onClick={() => handleType(9)} className={classes.button} variant="outline-secondary">ORGAN DALAM</Button>
-                        </Col>
-                    }
-                </Row> */}
                 <Obat keyword={keyword.length} type={type} />
-                {
-                    type === 1 ?
-                        <Copyright /> :
-                        <div style={{ marginTop: "9.5%" }}>
-                            <Copyright />
-                        </div>
-                }
-
-
+                <Copyright />
             </Container>
         </div >
     );
