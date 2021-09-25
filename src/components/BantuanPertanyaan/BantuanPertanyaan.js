@@ -194,7 +194,7 @@ const BantuanPertanyaan = () => {
                         Permintaan anda akan kami proses, kami akan menghubungi lewat Email dan WA. Harap segera mengeceknya
                     </Typography>
                     <Typography variant="subtitle1" color="textSecondary" style={{ marginTop: "15px" }}>
-                        Sistem kemungkinan full, sehingga permintaan anda sedikit terlambat. Jika dalam 5 menit anda tidak mendapat balasan, maka segera hubungi call center kami : 082145673421
+                        Sistem kemungkinan penuh, sehingga permintaan anda sedikit terlambat. Jika dalam 5 menit anda tidak mendapat balasan, maka segera hubungi call center kami : 082145673421
                     </Typography>
                     <div className={classes.rootButton}>
                         <Button onClick={handlebacktohome} variant="outline-success" className={classes.button}>Kembali ke Halaman Utama</Button>
